@@ -1,7 +1,7 @@
 import React from "react";
 import { CocktailCard } from "./styles";
 import { cardMotion, fadeIn } from "../../framer/animation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react/cjs/react.development";
 
 const Card = ({
