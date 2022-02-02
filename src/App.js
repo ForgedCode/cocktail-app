@@ -1,10 +1,16 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
+import MainPage from "./Pages/MainPage/MainPage";
+import { GlobalStyle } from "./Styles/GlobalStyles";
 
 const App = () => {
 	return (
-		<div>
-			<h1>Cocktails App</h1>
-		</div>
+		<>
+			<GlobalStyle />
+			<AnimatePresence exitBeforeEnter>
+				<MainPage />
+			</AnimatePresence>
+		</>
 	);
 };
 
