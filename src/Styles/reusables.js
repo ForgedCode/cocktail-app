@@ -14,6 +14,7 @@ export const Button = styled(motion.button)`
 	color: ${color.grey};
 	padding: ${v.smallDist} ${v.largeDist};
 	transition: ${t.fastSp};
+	cursor: pointer;
 
 	&:hover {
 		box-shadow: rgba(18, 98, 112, 0.5) 5px 5px, rgba(18, 98, 112, 0.1) 10px 10px;

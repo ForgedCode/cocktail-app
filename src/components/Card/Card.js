@@ -2,7 +2,7 @@ import React from "react";
 import { CocktailCard } from "./styles";
 import { cardMotion, fadeIn } from "../../framer/animation";
 import { motion } from "framer-motion";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const Card = ({
 	name,
