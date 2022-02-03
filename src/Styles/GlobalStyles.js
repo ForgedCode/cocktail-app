@@ -20,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-size: 1.6rem;
         font-family: 'Poppins', sans-serif;
-        color: ${color.grey}
+        color: ${color.grey};
+        overflow-x: hidden;
     }
 
     ul {
