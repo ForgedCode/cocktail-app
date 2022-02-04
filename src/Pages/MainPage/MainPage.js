@@ -15,14 +15,12 @@ const MainPage = () => {
 		setLoading(true);
 		await axios.get(randomCtUrl).then((response) => {
 			setCocktail(response.data);
-			console.log(response.data);
+
 			setTimeout(() => {
 				setLoading(false);
 			}, 3000);
 		});
 	};
-
-	console.log(loading);
 
 	return (
 		<Main>
