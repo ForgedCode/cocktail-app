@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const Card = ({
 	name,
-	key,
 	thumb,
 	ingr1,
 	ingr2,
@@ -28,7 +27,6 @@ const Card = ({
 			initial='hidden'
 			animate='show'
 			exit='exit'
-			key={key}
 		>
 			<motion.div className='img__container'>
 				<motion.img

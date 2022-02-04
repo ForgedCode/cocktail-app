@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { categoryUrl } from "../../cocktail_api/api";
+import { randomCtUrl } from "../../cocktail_api/api";
 import Card from "../../components/Card/Card";
 import { Main } from "./styles";
 import { Button } from "../../Styles/reusables";
@@ -8,18 +8,30 @@ import { AnimatePresence } from "framer-motion";
 
 const MainPage = () => {
 	const [cocktail, setCocktail] = useState(null);
+	const [loading, setLoading] = useState(false);
 
-	let getRandomCocktail = () => {
-		axios.get(categoryUrl).then((response) => {
+	let getRandomCocktail = async () => {
+		if (loading) return;
+		setLoading(true);
+		await axios.get(randomCtUrl).then((response) => {
 			setCocktail(response.data);
+			console.log(response.data);
+			setTimeout(() => {
+				setLoading(false);
+			}, 3000);
 		});
 	};
+
+	console.log(loading);
 
 	return (
 		<Main>
 			<h1>Get your random cocktail recipe</h1>
 			<div className='btn__container'>
-				<Button whileTap={{ scale: 0.8 }} onClick={getRandomCocktail}>
+				<Button
+					whileTap={{ scale: 0.8 }}
+					onClick={loading ? null : getRandomCocktail}
+				>
 					Tap!
 				</Button>
 			</div>
